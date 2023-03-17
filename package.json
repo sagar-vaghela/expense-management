@@ -1,5 +1,5 @@
 {
-  "name": "andromeda-light-nextjs",
+  "name": "expense-management",
   "description": "",
   "version": "1.0.0",
   "license": "MIT",
@@ -11,6 +11,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.13",
+    "@heroicons/react": "^2.0.16",
     "disqus-react": "^1.1.5",
     "feather-icons-react": "^0.6.2",
     "github-slugger": "^2.0.0",
