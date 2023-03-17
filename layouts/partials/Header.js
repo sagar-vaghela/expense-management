@@ -110,14 +110,14 @@ const Header = () => {
             )}
           </ul>
           <div className="order-1 ml-auto flex items-center md:ml-0">
-            {config.nav_button.enable && (
+            {/* {config.nav_button.enable && (
               <Link
                 className="btn btn-primary hidden lg:flex"
                 href={config.nav_button.link}
               >
                 {config.nav_button.label}
               </Link>
-            )}
+            )} */}
 
             {/* navbar toggler */}
             {showMenu ? (

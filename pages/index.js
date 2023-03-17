@@ -50,7 +50,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
           ">-.5"
         );
 
-      //parallax banner
+      // parallax banner
       const parallaxTl = gsap.timeline({
         ease: "none",
         scrollTrigger: {
@@ -167,11 +167,11 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                       "h1",
                       "mb-8 banner-title opacity-0"
                     )}
-                    <div className="banner-btn opacity-0">
+                    {/* <div className="banner-btn opacity-0">
                       <Link className="btn btn-primary" href={banner.link.href}>
                         {banner.link.label}
                       </Link>
-                    </div>
+                    </div> */}
                   </div>
                   <div className="col-10">
                     <ImageFallback
@@ -186,7 +186,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                 </div>
               </div>
             </div>
-            <div className="row border-y border-border py-5">
+            {/* <div className="row border-y border-border py-5">
               <div className="animate from-right col-12">
                 <Swiper
                   loop={true}
@@ -219,7 +219,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                   ))}
                 </Swiper>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -275,7 +275,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
       </section>
 
       {/* Short Into */}
-      <section className="section pt-0">
+      {/* <section className="section pt-0">
         <div className="container-xl">
           <div className="relative px-4 py-[70px]">
             <div className="text-center">
@@ -343,10 +343,10 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Special Features */}
-      <section className="section">
+      {/* <section className="section">
         <div className="container">
           <div className="row items-center justify-center">
             <div className="animate lg:col-6 lg:order-2">
@@ -389,7 +389,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonial */}
       <section className="section pt-0">
@@ -402,14 +402,14 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
           <div className="animate row mt-10 items-center justify-center">
             <div className="xl:col-11">
               <div className="row items-center justify-center">
-                <div className="hidden lg:col-3 xl:col-4 lg:block">
+                {/* <div className="hidden lg:col-3 xl:col-4 lg:block">
                   <ImageFallback
                     src="/images/testimonials-01.png"
                     width={455}
                     height={522}
                     alt="testimonials"
                   />
-                </div>
+                </div> */}
                 <div className="md:col-7 lg:col-6 xl:col-4">
                   {
                     <Swiper
@@ -432,7 +432,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                           className="text-center"
                           key={"testimonial-" + index}
                         >
-                          <div className="py-6 px-8 sm:py-12 md:px-10 lg:px-20 xl:px-12">
+                          {/* <div className="py-6 px-8 sm:py-12 md:px-10 lg:px-20 xl:px-12">
                             <TbQuote className="mx-auto rotate-180 text-5xl text-body sm:text-6xl lg:text-8xl" />
                             {markdownify(
                               item.content,
@@ -451,26 +451,26 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                               <h6>{item.author}</h6>
                               <p>{item.profession}</p>
                             </div>
-                          </div>
+                          </div> */}
                         </SwiperSlide>
                       ))}
                     </Swiper>
                   }
-                  <div className="relative h-8">
+                  {/* <div className="relative h-8">
                     <div
                       className="pagination absolute left-1/2 -translate-x-1/2"
                       ref={testimonialPaginationRef}
                     ></div>
-                  </div>
+                  </div> */}
                 </div>
-                <div className="hidden lg:col-3 xl:col-4 lg:block">
+                {/* <div className="hidden lg:col-3 xl:col-4 lg:block">
                   <ImageFallback
                     src="/images/testimonials-02.png"
                     width={455}
                     height={522}
                     alt="testimonials"
                   />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

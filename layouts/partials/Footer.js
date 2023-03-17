@@ -18,12 +18,14 @@ const Footer = () => {
             {markdownify(footer_content, "p", "mt-3")}
           </div>
           <div className="animate mt-8 md:col-6 lg:col-3 lg:mt-0">
-            <h3 className="h5">Socials</h3>
-            <div className="mt-5">
-              {email && <Link href={`mailto:${email}`}>{email}</Link>}
+            <h3 className="h5 ">Module</h3>
+            <p className="pt-4">Admin</p>
+            <p className="pt-3">User</p>
+            {/* <div className="mt-5"> */}
+              {/* {email && <Link href={`mailto:${email}`}>{email}</Link>} */}
               {/* social icons */}
-              <Social source={social} className="social-icons mt-5" />
-            </div>
+              {/* <Social source={social} className="social-icons mt-5" /> */}
+            {/* </div> */}
           </div>
           <div className="animate mt-8 md:col-6 lg:col-3 lg:mt-0">
             <h3 className="h5">Quick Links</h3>

@@ -3,10 +3,10 @@
     "title": "Andromeda Light Nextjs",
     "base_url": "/",
     "favicon": "/images/favicon.png",
-    "logo": "/images/logo.svg",
-    "logo_width": "240",
-    "logo_height": "34",
-    "logo_text": "Andromeda"
+    "logo": "",
+    "logo_width": "300",
+    "logo_height": "60",
+    "logo_text": "Daily Expense"
   },
 
   "settings": {
@@ -18,14 +18,14 @@
   "params": {
     "tag_manager_id": "",
     "contact_form_action": "#",
-    "footer_content": "Lorem ipsum dolor sit sed dmi amet, consectetur adipiscing. Cdo tellus, sed condimentum volutpat.",
-    "copyright": "Designed & Developed By [Themefisher](https:www.themefisher.com)"
+    "footer_content": "Expense tracking is important in creating a budget for your small business. Keeping a daily record of your expenses by tracking receipts, invoices, and other outgoing expenses improves the financial health of your budget. Tracking expenses can help you stay on top of your cash flow and prepare you for tax season.",
+    "copyright": "Designed & Developed By Bansari Dhanani & Thyona Busa"
   },
 
   "contact_info": {
-    "phone": "+887887998",
-    "email": "info@andromeda.io",
-    "location": "2118 Thornridge Cir. Syracuse, Connecticut 35624"
+    "phone": "+91 9104465436",
+    "email": "de@gmail.com",
+    "location": "2005, Sarthana Jakatnaka Surat-395006"
   },
 
   "nav_button": {
