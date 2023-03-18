@@ -18,6 +18,7 @@ import formatDate from "../lib/utils/formatDate";
 import { useContext, useState } from "react";
 import { useUser } from "@lib/firebase/useUser";
 import { useEffect } from "react";
+import fetchExpense from "pages/api/fetchExpense";
 
 const initialState = {
   amount: "",
@@ -50,6 +51,7 @@ const Form = () => {
   console.log("formdfata======",transaction);
   const registerExpense = () => fetch(`/api/addExpense?id=${encodeURIComponent(user && user.id)}&data=${JSON.stringify(transaction)}`)
     registerExpense()
+    
 },[transaction])
 
   const selectedCat =

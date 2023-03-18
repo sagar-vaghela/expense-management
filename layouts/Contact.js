@@ -4,6 +4,10 @@ import ImageFallback from "./components/ImageFallback";
 import { useState } from "react";
 import ContactsData from "@/components/realtimeDatabase/Contacts";
 import { useUser } from "@lib/firebase/useUser";
+import { useEffect } from "react";
+import { onValue, ref } from "firebase/database";
+import { realDB } from '@/lib/firebase/initFirebase'
+
 
 const Contact = ({ data }) => {
   const { frontmatter } = data;
@@ -42,7 +46,18 @@ const Contact = ({ data }) => {
     setInitial();
   }
 
- 
+ useEffect(()=>{
+if(user){
+  const onCountIncrease = (count) => console.log(count.val())
+
+  const fetchData = async () => {
+      const countRef = ref(realDB, "contacts/")
+      onValue(countRef, onCountIncrease)
+  }
+
+  fetchData();
+}
+ },[user])
 
   return (
     <section className="section">

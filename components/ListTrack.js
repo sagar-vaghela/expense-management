@@ -32,7 +32,7 @@ const ListTrack = () => {
         <Button
           onClick={removeAll}
           variant="outlined"
-          style={{ marginLeft: 170 }}
+          style={{ marginLeft: 185, width: '120px' }}
         >
           Delete All
         </Button>

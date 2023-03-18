@@ -1,10 +1,28 @@
 import Banner from "./components/Banner";
 import CardExp from "../components/CardExp";
 import CardTrack from "../components/CardTrack";
+import { useUser } from "@lib/firebase/useUser";
+import { useEffect } from "react";
+import { realDB } from "@lib/firebase/initFirebase";
+import { onValue, ref } from "firebase/database";
 
 const ExpenseTracker = ({ data }) => {
   const { frontmatter } = data;
   const { title } = frontmatter;
+  const {user} = useUser();
+
+  useEffect(()=>{
+    if(user){
+      const onCountIncrease = (count) => console.log(count.val())
+    
+      const fetchData = async () => {
+          const countRef = ref(realDB, "expense/")
+          onValue(countRef, onCountIncrease)
+      }
+    
+      fetchData();
+    }
+     },[user])
 
   return (
     <section className="section">
