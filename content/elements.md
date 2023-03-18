@@ -95,11 +95,11 @@ Some text to show that the reference links can follow later.
 
 <Code language="html">
 {`<ul>
-  <li class="nav-item">
-    <a class="nav-link" href="/">Home</a>
+  <li className="nav-item">
+    <a className="nav-link" href="/">Home</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="about/">About</a>
+  <li className="nav-item">
+    <a className="nav-link" href="about/">About</a>
   </li>
 </ul>`}
 </Code>

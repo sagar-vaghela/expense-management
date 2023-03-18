@@ -5,7 +5,7 @@ const initialState = [];
 
 export const ExpTrackCon = createContext(initialState);
 
-export const Context = (props) => {
+export const Context = ({children}) => {
   const [transaction, dispatch] = useReducer(conReduce, initialState);
 
   const deleteTrans = (id) =>
@@ -20,7 +20,7 @@ export const Context = (props) => {
   return (
     <div>
       <ExpTrackCon.Provider value={{ deleteTrans, addTrans, removeAll, transaction }}>
-        {props.children}
+        {children}
       </ExpTrackCon.Provider>
     </div>
   );

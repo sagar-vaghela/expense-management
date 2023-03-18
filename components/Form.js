@@ -8,6 +8,7 @@ import {
   MenuItem,
   Button,
 } from "@material-ui/core";
+import Head from 'next/head';
 
 import { v4 as uuid } from "uuid";
 import { ExpTrackCon } from "./Context/Context";
@@ -29,17 +30,17 @@ const Form = () => {
   const { addTrans } = useContext(ExpTrackCon);
 
   const createTrans = () => {
-    // if (Number.isNaN(Number(formData.amount)) || !formData.date.includes('-')) return;
-    
-    // const transaction = {
-    //   ...formData,
-    //   amount: Number(formData.amount),
-    //   id: uuid(),
-    // };
+    if (Number.isNaN(Number(formData.amount)) || !formData.date.includes("-"))
+      return;
 
-    // addTrans(transaction);
-    // setFormData(initialState);
-    console.log("add data====");
+    const transaction = {
+      ...formData,
+      amount: Number(formData.amount),
+      id: uuid(),
+    };
+
+    addTrans(transaction);
+    setFormData(initialState);
   };
 
   const selectedCat =
@@ -48,10 +49,8 @@ const Form = () => {
   return (
     <div>
       <Grid container spacing={2}>
-        
         <Grid item xs={12}>
-          <Typography style={{ margin: 20 }}>
-          </Typography>
+          <Typography style={{ margin: 20 }}></Typography>
         </Grid>
 
         <Grid item xs={12}>
@@ -109,7 +108,7 @@ const Form = () => {
               setFormData({ ...formData, date: formatDate(e.target.value) })
             }
           />
-        </Grid> 
+        </Grid>
 
         <Button
           variant="contained"

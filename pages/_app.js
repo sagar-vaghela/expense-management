@@ -1,3 +1,4 @@
+import { Context } from "@/components/Context/Context";
 import config from "@config/config.json";
 import theme from "@config/theme.json";
 import Head from "next/head";
@@ -51,7 +52,9 @@ const App = ({ Component, pageProps }) => {
           content="width=device-width, initial-scale=1, maximum-scale=5"
         />
       </Head>
+      <Context>
       <Component {...pageProps} />
+      </Context>
     </>
   );
 };

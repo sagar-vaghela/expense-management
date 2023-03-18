@@ -14,7 +14,7 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import { Delete, MoneyOff } from "@material-ui/icons";
 
-import { ExpTrackCon } from "../components/Context/Context";
+import { ExpTrackCon } from "./Context/Context";
 
 const useStyles = makeStyles({
   avatarInc: { backgroundColor: "navy" },
@@ -28,7 +28,7 @@ const ListTrack = () => {
 
   return (
     <div>
-      {transaction && transaction.length > 0 ? (
+      {transaction.length > 0 ? (
         <Button
           onClick={removeAll}
           variant="outlined"
@@ -38,7 +38,7 @@ const ListTrack = () => {
         </Button>
       ) : null}
       <List dense={false}>
-        {(transaction || []).map((data, index) => (
+        {transaction.map((data, index) => (
           <div key={index}>
             <Slide direction="down" in mountOnEnter unmountOnExit>
               <ListItem>
