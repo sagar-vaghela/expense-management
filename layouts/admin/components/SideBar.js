@@ -2,9 +2,11 @@ import { forwardRef } from "react";
 import Link from "next/link";
 import { HomeIcon, CreditCardIcon, UserIcon } from "@heroicons/react/24/solid";
 import { useRouter } from "next/router";
+import { useUser } from "@lib/firebase/useUser";
 
 const SideBar = forwardRef(({ showNav }, ref) => {
   const router = useRouter();
+  const {logout} = useUser();
 
   return (
     <div ref={ref} className="fixed w-56 h-full bg-white shadow-sm">
@@ -64,6 +66,23 @@ const SideBar = forwardRef(({ showNav }, ref) => {
             </div>
             <div>
               <p>Billing</p>
+            </div>
+          </div>
+        </Link>
+        <Link href="/">
+          <div
+            className={`pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors ${
+              router.pathname == "/"
+                ? "bg-orange-100 text-orange-500"
+                : "text-gray-400 hover:bg-orange-100 hover:text-orange-500"
+            }`}
+            onClick={logout}
+          >
+            <div className="mr-2">
+              <CreditCardIcon className="h-5 w-5" />
+            </div>
+            <div>
+              <p>Log Out</p>
             </div>
           </div>
         </Link>

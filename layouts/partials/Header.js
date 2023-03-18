@@ -1,6 +1,7 @@
 import Logo from "@components/Logo";
 import config from "@config/config.json";
 import menu from "@config/menu.json";
+import { useUser } from "@lib/firebase/useUser";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
@@ -9,6 +10,7 @@ import { CgClose } from "react-icons/cg";
 const Header = () => {
   // distructuring the main menu from menu object
   const { main } = menu;
+  const {logout} = useUser()
 
   // states declaration
   const [showMenu, setShowMenu] = useState(false);
@@ -95,6 +97,7 @@ const Header = () => {
                       {menu.name}
                     </Link>
                   </li>
+                  
                 )}
               </React.Fragment>
             ))}
@@ -146,6 +149,9 @@ const Header = () => {
               </button>
             )}
             {/* /navbar toggler */}
+          </div>
+          <div className="order-1">
+            <button onClick={logout}>Log out</button>
           </div>
         </nav>
       </header>

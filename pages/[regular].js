@@ -4,12 +4,14 @@ import Base from "@layouts/Baseof";
 import Contact from "@layouts/Contact";
 import Default from "@layouts/Default";
 import { getRegularPage, getSinglePage } from "@lib/contentParser";
+import { useUser } from "@lib/firebase/useUser";
 
 // for all regular pages
 const RegularPages = ({ data }) => {
   const { title, meta_title, description, image, noindex, canonical, layout } =
     data.frontmatter;
   const { content } = data;
+  const {user} = useUser()
 
   return (
     <Base
@@ -22,11 +24,11 @@ const RegularPages = ({ data }) => {
     >
       {layout === "404" ? (
         <NotFound data={data} />
-      ) : layout === "about" ? (
+      ) : user && layout === "about" ? (
         <About data={data} />
-      ) : layout === "contact" ? (
+      ) : user && layout === "contact" ? (
         <Contact data={data} />
-      ) : (
+      ) : user && (
         <Default data={data} />
       )}
     </Base>
