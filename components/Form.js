@@ -16,6 +16,8 @@ import { incomeCategories, expenseCategories } from "../Constants/categories";
 
 import formatDate from "../lib/utils/formatDate";
 import { useContext, useState } from "react";
+import { useUser } from "@lib/firebase/useUser";
+import { useEffect } from "react";
 
 const initialState = {
   amount: "",
@@ -26,22 +28,29 @@ const initialState = {
 
 const Form = () => {
   const [formData, setFormData] = useState(initialState);
+  const {user} = useUser();
 
-  const { addTrans } = useContext(ExpTrackCon);
+  const { addTrans,transaction} = useContext(ExpTrackCon);
 
   const createTrans = () => {
     if (Number.isNaN(Number(formData.amount)) || !formData.date.includes("-"))
       return;
 
-    const transaction = {
+    const transactionList = {
       ...formData,
       amount: Number(formData.amount),
       id: uuid(),
     };
-
-    addTrans(transaction);
+    
+    addTrans(transactionList);
     setFormData(initialState);
+
   };
+  useEffect(()=>{
+  console.log("formdfata======",transaction);
+  const registerExpense = () => fetch(`/api/addExpense?id=${encodeURIComponent(user && user.id)}&data=${JSON.stringify(transaction)}`)
+    registerExpense()
+},[transaction])
 
   const selectedCat =
     formData.type === "Income" ? incomeCategories : expenseCategories;
