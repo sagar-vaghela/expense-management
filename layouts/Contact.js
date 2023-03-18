@@ -16,7 +16,16 @@ const Contact = ({ data }) => {
   const[message,setMessage]=useState("")
   const[formValues,setFormValues]=useState({})
 
+  const isEmpty = () => {
+    return (name !== '' || email !== '' || subject !== "" || message !== "")
+  }
 
+  const setInitial = () => {
+    setName('');
+    setEmail('')
+    setSubject('')
+    setMessage('')
+  }
 
   function onSubmit(e){
     e.preventDefault();
@@ -25,9 +34,12 @@ const Contact = ({ data }) => {
       name,email,subject,message
     }
 
+
+    if(!isEmpty()) return // alert
+
     const registerContact = () => fetch(`/api/addContacts?id=${encodeURIComponent(user.id)}&data=${JSON.stringify(contactObj)}`)
-    registerContact()
-  //  setFormValues(contactObj)
+    registerContact();
+    setInitial();
   }
 
  
