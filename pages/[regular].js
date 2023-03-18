@@ -16,7 +16,7 @@ const RegularPages = ({ data }) => {
     if (layout === "404") {
       return <NotFound data={data} />;
     } else if (layout === "about") {
-      return <NotFound data={data} />;
+      return <About data={data} />;
     } else if (layout === "contact") {
       return <Contact data={data} />;
     } else if (layout === "expenseTracker") {

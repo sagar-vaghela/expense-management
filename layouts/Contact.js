@@ -1,10 +1,24 @@
 import config from "@config/config.json";
 import Banner from "./components/Banner";
 import ImageFallback from "./components/ImageFallback";
-
+import { useState } from "react";
 const Contact = ({ data }) => {
   const { frontmatter } = data;
   const { title } = frontmatter;
+
+  const[name,setName]=useState("")
+  const[email,setEmail]=useState("")
+  const[subject,setSubject]=useState("")
+  const[message,setMessage]=useState("")
+
+  function onSubmit(){
+    let contactObj = {
+      name,email,subject,message
+    }
+    console.log(contactObj)
+  }
+
+ 
 
   return (
     <section className="section">
@@ -22,9 +36,8 @@ const Contact = ({ data }) => {
           </div>
           <div className="animate lg:col-5">
             <form
-              method="POST"
-              action={config.params.contact_form_action}
               className="contact-form rounded-xl p-6 shadow-[0_4px_25px_rgba(0,0,0,0.05)]"
+              onSubmit={onSubmit}
             >
               <h2 className="h4 mb-6">Send A Message</h2>
               <div className="mb-6">
@@ -39,6 +52,8 @@ const Contact = ({ data }) => {
                   name="name"
                   placeholder="Full Name"
                   type="text"
+                  value={name}
+                  onChange={(e)=>setName((e.target.value))}
                   required
                 />
               </div>
@@ -54,6 +69,8 @@ const Contact = ({ data }) => {
                   name="email"
                   placeholder="Email Address"
                   type="email"
+                  value={email}
+                  onChange={(e)=>setEmail((e.target.value))}
                   required
                 />
               </div>
@@ -68,6 +85,8 @@ const Contact = ({ data }) => {
                   className="form-input w-full"
                   name="subject"
                   type="text"
+                  value={subject}
+                  onChange={(e)=>setSubject((e.target.value))}
                   required
                 />
               </div>
@@ -78,9 +97,9 @@ const Contact = ({ data }) => {
                 >
                   Message
                 </label>
-                <textarea className="form-textarea w-full" rows="6" />
+                <textarea className="form-textarea w-full" rows="6" value={message} onChange={(e)=>setMessage((e.target.value))}/>
               </div>
-              <button className="btn btn-primary block w-full">
+              <button className="btn btn-primary block w-full" type="submit">
                 Submit Now
               </button>
             </form>

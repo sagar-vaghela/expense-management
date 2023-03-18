@@ -14,7 +14,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
 if (user && user.email === 'admin@admin.com'){
   return <AdminIndex />
 } else if (user) {
-  return <HomeIndex  banner={banner} brands={brands} features={features} intro={intro} speciality={speciality} testimonial={testimonial}/>
+  return <HomeIndex  banner={banner} features={features} intro={intro} speciality={speciality} testimonial={testimonial}/>
 } else {
   return <Auth />
 
@@ -29,13 +29,12 @@ export default Home;
 export const getStaticProps = async () => {
   const homepage = await getListPage("content/_index.md");
   const { frontmatter } = homepage;
-  const { banner, brands, features, intro, speciality, testimonial } =
+  const { banner, features, intro, speciality, testimonial } =
     frontmatter;
 
   return {
     props: {
       banner: banner,
-      brands: brands,
       features: features,
       intro: intro,
       speciality: speciality,

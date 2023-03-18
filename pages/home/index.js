@@ -15,7 +15,7 @@ import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 
-const HomeIndex = ({ banner, brands, features, intro, speciality, testimonial }) => {
+const HomeIndex = ({ banner, features, intro, speciality, testimonial }) => {
   const paginationRef = useRef(null);
   const testimonialPaginationRef = useRef(null);
   const { logout } = useUser()
@@ -204,7 +204,7 @@ const HomeIndex = ({ banner, brands, features, intro, speciality, testimonial })
                   modules={[Autoplay]}
                   autoplay={{ delay: 3000 }}
                 >
-                  {brands.map((brand, index) => (
+                .map((brand, index) => (
                     <SwiperSlide
                       className=" h-20 cursor-pointer py-6 px-6 grayscale  transition hover:grayscale-0 lg:px-10"
                       key={"brand-" + index}
@@ -493,13 +493,12 @@ export default HomeIndex;
 export const getStaticProps = async () => {
   const homepage = await getListPage("content/_index.md");
   const { frontmatter } = homepage;
-  const { banner, brands, features, intro, speciality, testimonial } =
+  const { banner, features, intro, speciality, testimonial } =
     frontmatter;
 
   return {
     props: {
       banner: banner,
-      brands: brands,
       features: features,
       intro: intro,
       speciality: speciality,
