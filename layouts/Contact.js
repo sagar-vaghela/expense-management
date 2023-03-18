@@ -2,20 +2,32 @@ import config from "@config/config.json";
 import Banner from "./components/Banner";
 import ImageFallback from "./components/ImageFallback";
 import { useState } from "react";
+import ContactsData from "@/components/realtimeDatabase/Contacts";
+import { useUser } from "@lib/firebase/useUser";
+
 const Contact = ({ data }) => {
   const { frontmatter } = data;
   const { title } = frontmatter;
+  const {user} = useUser();
 
   const[name,setName]=useState("")
   const[email,setEmail]=useState("")
   const[subject,setSubject]=useState("")
   const[message,setMessage]=useState("")
+  const[formValues,setFormValues]=useState({})
 
-  function onSubmit(){
+
+
+  function onSubmit(e){
+    e.preventDefault();
+
     let contactObj = {
       name,email,subject,message
     }
-    console.log(contactObj)
+
+    const registerContact = () => fetch(`/api/addContacts?id=${encodeURIComponent(user.id)}&data=${JSON.stringify(contactObj)}`)
+    registerContact()
+  //  setFormValues(contactObj)
   }
 
  
@@ -99,6 +111,7 @@ const Contact = ({ data }) => {
                 </label>
                 <textarea className="form-textarea w-full" rows="6" value={message} onChange={(e)=>setMessage((e.target.value))}/>
               </div>
+
               <button className="btn btn-primary block w-full" type="submit">
                 Submit Now
               </button>
