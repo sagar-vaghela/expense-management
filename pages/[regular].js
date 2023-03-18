@@ -3,15 +3,28 @@ import About from "@layouts/About";
 import Base from "@layouts/Baseof";
 import Contact from "@layouts/Contact";
 import Default from "@layouts/Default";
+import ExpenseTracker from "@layouts/ExpenseTracker";
 import { getRegularPage, getSinglePage } from "@lib/contentParser";
-import { useUser } from "@lib/firebase/useUser";
 
 // for all regular pages
 const RegularPages = ({ data }) => {
   const { title, meta_title, description, image, noindex, canonical, layout } =
     data.frontmatter;
   const { content } = data;
-  const {user} = useUser()
+
+  const pages = () => {
+    if (layout === "404") {
+      return <NotFound data={data} />;
+    } else if (layout === "about") {
+      return <NotFound data={data} />;
+    } else if (layout === "contact") {
+      return <Contact data={data} />;
+    } else if (layout === "expenseTracker") {
+      return <ExpenseTracker data={data} />;
+    } else {
+      return <Default data={data} />;
+    }
+  };
 
   return (
     <Base
@@ -22,15 +35,7 @@ const RegularPages = ({ data }) => {
       noindex={noindex}
       canonical={canonical}
     >
-      {layout === "404" ? (
-        <NotFound data={data} />
-      ) : user && layout === "about" ? (
-        <About data={data} />
-      ) : user && layout === "contact" ? (
-        <Contact data={data} />
-      ) : user && (
-        <Default data={data} />
-      )}
+      {pages()}
     </Base>
   );
 };

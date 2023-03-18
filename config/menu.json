@@ -11,6 +11,10 @@
     {
       "name": "Contact",
       "url": "/contact"
+    },
+    {
+      "name": "ExpenseTracker",
+      "url": "/expenseTracker"
     }
   ],
   "footer": [
@@ -21,6 +25,10 @@
     {
       "name": "Blog",
       "url": "/blog"
+    },
+    {
+      "name": "Terms & Conditions",
+      "url": "/terms-policy"
     }
   ]
 }
