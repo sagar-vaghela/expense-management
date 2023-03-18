@@ -31,15 +31,15 @@ const Form = () => {
   const createTrans = () => {
     // if (Number.isNaN(Number(formData.amount)) || !formData.date.includes('-')) return;
     
-    // const transaction = {
-    //   ...formData,
-    //   amount: Number(formData.amount),
-    //   id: uuid(),
-    // };
+    const transaction = {
+      ...formData,
+      amount: Number(formData.amount),
+      id: uuid(),
+    };
 
     // addTrans(transaction);
     // setFormData(initialState);
-    console.log("add data====");
+    console.log("transaction data====", transaction);
   };
 
   const selectedCat =
