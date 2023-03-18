@@ -19,6 +19,7 @@ import { useContext, useState } from "react";
 import { useUser } from "@lib/firebase/useUser";
 import { useEffect } from "react";
 import fetchExpense from "pages/api/fetchExpense";
+import useTransaction from "./useTransaction";
 
 const initialState = {
   amount: "",
@@ -30,6 +31,8 @@ const initialState = {
 const Form = () => {
   const [formData, setFormData] = useState(initialState);
   const {user} = useUser();
+  const {total} = useTransaction('Income')
+  const {total: expenseTotal} = useTransaction('Expense')
 
   const { addTrans,transaction} = useContext(ExpTrackCon);
 
@@ -48,9 +51,13 @@ const Form = () => {
 
   };
   useEffect(()=>{
-  console.log("formdfata======",transaction);
-  const registerExpense = () => fetch(`/api/addExpense?id=${encodeURIComponent(user && user.id)}&data=${JSON.stringify(transaction)}`)
-    registerExpense()
+    if (user){
+      console.log("formdfata======",transaction);
+      let a = {...transaction, income: total, expense: expenseTotal}
+      const registerExpense = () => fetch(`/api/addExpense?id=${encodeURIComponent(user.id)}&data=${JSON.stringify(a)}`)
+        registerExpense()
+    }
+  
     
 },[transaction])
 
