@@ -31,8 +31,9 @@ const initialState = {
 const Form = () => {
   const [formData, setFormData] = useState(initialState);
   const {user} = useUser();
-  const {total} = useTransaction('Income')
+  const {total, filterCat} = useTransaction('Income')
   const {total: expenseTotal} = useTransaction('Expense')
+
 
   const { addTrans,transaction} = useContext(ExpTrackCon);
 
@@ -50,14 +51,13 @@ const Form = () => {
     setFormData(initialState);
 
   };
-  useEffect(()=>{
+  useEffect(()=>{ 
     if (user){
       console.log("formdfata======",transaction);
-      let a = {...transaction, income: total, expense: expenseTotal}
+      let a = {transaction, income: total, expense: expenseTotal}
       const registerExpense = () => fetch(`/api/addExpense?id=${encodeURIComponent(user.id)}&data=${JSON.stringify(a)}`)
         registerExpense()
     }
-  
     
 },[transaction])
 

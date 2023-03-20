@@ -22,9 +22,12 @@ const useStyles = makeStyles({
   slide: { overflowY: "scroll" },
 });
 
-const ListTrack = () => {
+const ListTrack = ({FBExpenseData}) => {
   const classes = useStyles();
   const { deleteTrans, removeAll, transaction } = React.useContext(ExpTrackCon);
+  const {income, expense, ...expenseList} = FBExpenseData !== null && FBExpenseData
+
+  console.log(transaction, "transaction-----------------0000000000", expenseList.transaction);
 
   return (
     <div>
@@ -38,7 +41,7 @@ const ListTrack = () => {
         </Button>
       ) : null}
       <List dense={false}>
-        {transaction.map((data, index) => (
+        {expenseList && expenseList.transaction?.map((data, index) => (
           <div key={index}>
             <Slide direction="down" in mountOnEnter unmountOnExit>
               <ListItem>

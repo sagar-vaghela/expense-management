@@ -36,7 +36,9 @@ const useStyles = makeStyles({
 
 const CardExp = (props) => {
   const classes = useStyles();
-  const { total, chartData } = useTransaction(props.title);
+  const { total, chartData, filterCat } = useTransaction(props.title);
+  const {income, expense} = props.FBExpenseData !== null && props.FBExpenseData
+  console.log(filterCat, 'chartData');
 
   return (
     <div className={classes.parent}>
@@ -53,8 +55,7 @@ const CardExp = (props) => {
             {props.title}
           </Typography>
 
-          <Typography>$ {total}</Typography>
-
+          <Typography>$ {props.title === "Income" ? income : expense}</Typography>
           <Doughnut
             data={chartData}
             width={100}

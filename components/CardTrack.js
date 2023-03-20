@@ -38,7 +38,7 @@ const CardTrack = (props) => {
         <CardContent>
           <Grid container spacing={2}>
             <Grid item xs={12}>
-              <ListTrack />
+              <ListTrack FBExpenseData={props.FBExpenseData}/>
             </Grid>
           </Grid>
         </CardContent>

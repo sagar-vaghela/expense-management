@@ -27,6 +27,7 @@ const useTransaction = (title) => {
   });
 
   const filterCat = cats.filter((c) => c.amount > 0);
+  
 
   const chartData = {
     datasets: [
