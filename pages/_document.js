@@ -24,7 +24,7 @@ const Document = () => {
           content="#000"
         />
       </Head>
-      <body>
+      <body className="dx-viewport">
         <Main />
         <TwSizeIndicator />
         <NextScript />
