@@ -63,15 +63,15 @@ our_member:
   title: The People Behind
   content: We were freelance designers and developers, constantly finding </br> ourselves deep in vague feedback. This made every client and team
   list:
-    - name: Valentin Staykov
-      field: Operations
-      image: /images/about/team/01.jpg
-    - name: Bukiakta Bansalo
-      field: Product
-      image: /images/about/team/02.jpg
-    - name: Ortrin Okaster
-      field: Engineering
-      image: /images/about/team/03.jpg
+    - name: Thyona Busa
+      field: Web Designer & Developer
+      image: /images/about/team/IMG_5944.jpg
+    - name: Bansari Dhanani
+      field: Web Designer & Developer
+      image: /images/about/team/958F188D-EF54-432C-9B65-DEF1D2D3972D.JPG
+    # - name: Ortrin Okaster
+    #   field: Engineering
+    #   image: /images/about/team/03.jpg
 
 ## office
 # our_office:

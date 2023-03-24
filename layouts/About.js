@@ -267,19 +267,21 @@ const About = ({ data }) => {
           </div>
           <div className="row justify-center">
             <div className="lg:col-10">
-              <div className="row">
+              <div className="row justify-center">
                 {our_member.list.map((member, index) => (
                   <div
                     key={("member-", index)}
                     className="animate mt-10 text-center md:col-6 lg:col-4"
                   >
-                    <ImageFallback
-                      className="mx-auto rounded-full shadow-[10px_10px_0] shadow-primary/10"
-                      src={member.image}
-                      width={245}
-                      height={245}
-                      alt={member.name}
-                    />
+                    <div className="h-[300px] w-[300px]  ">
+                      <ImageFallback
+                        className="mx-auto  shadow-[10px_10px_0] rounded-full shadow-primary/10  h-full w-full object-cover"
+                        src={member.image}
+                        width={245}
+                        height={245}
+                        alt={member.name}
+                      />
+                    </div>
                     <h4 className="mt-8">{member.name}</h4>
                     <p className="mt-3">{member.field}</p>
                   </div>
