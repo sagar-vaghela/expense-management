@@ -55,7 +55,7 @@ const CardExp = (props) => {
             {props.title}
           </Typography>
 
-          <Typography>$ {props.title === "Income" ? income : expense}</Typography>
+          <Typography>₹ {props.title === "Income" ? income : expense}</Typography>
           <Doughnut
             data={chartData}
             width={100}

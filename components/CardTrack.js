@@ -26,10 +26,10 @@ const CardTrack = (props) => {
     <div className={classes.parent}>
       <Card className={classes.track} variant="outlined">
 
-        <CardHeader title={props.title} subheader="Powered by Speechly"/>
+        <CardHeader title={props.title} subheader=""/>
 
         <CardContent>
-          <Typography align="center">Total Expense = 100$</Typography>
+          {/* <Typography align="center">Total Expense = 100$</Typography> */}
         </CardContent>
 
         <Divider />

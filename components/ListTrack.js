@@ -58,7 +58,7 @@ const ListTrack = ({FBExpenseData}) => {
                 </ListItemAvatar>
                 <ListItemText
                   primary={data.category}
-                  secondary={`$ ${data.amount} - ${data.date}`}
+                  secondary={`₹ ${data.amount} - ${data.date}`}
                 />
                 <ListItemSecondaryAction>
                   <IconButton

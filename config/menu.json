@@ -23,8 +23,12 @@
       "url": "/about"
     },
     {
-      "name": "Blog",
-      "url": "/blog"
+      "name": "Contact",
+      "url": "/Contact"
+    },
+    {
+      "name": "Expense Tracker",
+      "url": "/Expense Tracker"
     },
     {
       "name": "",
