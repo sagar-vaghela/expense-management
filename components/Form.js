@@ -53,8 +53,8 @@ const Form = () => {
   };
   useEffect(()=>{ 
     if (user){
-      console.log("formdfata======",transaction);
-      let a = {transaction, income: total, expense: expenseTotal}
+      console.log("user",user.email);
+      let a = {transaction, income: total, expense: expenseTotal, user: user.email}
       const registerExpense = () => fetch(`/api/addExpense?id=${encodeURIComponent(user.id)}&data=${JSON.stringify(a)}`)
         registerExpense()
     }
