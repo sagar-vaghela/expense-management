@@ -15,6 +15,9 @@
     {
       "name": "ExpenseTracker",
       "url": "/expenseTracker"
+    },{
+      "name": "Todo",
+      "url": "/todo"
     }
   ],
   "footer": [
@@ -24,15 +27,15 @@
     },
     {
       "name": "Contact",
-      "url": "/Contact"
+      "url": "/contact"
     },
     {
       "name": "Expense Tracker",
-      "url": "/Expense Tracker"
+      "url": "/expenseTracker"
     },
     {
-      "name": "",
-      "url": "/terms-policy"
+      "name": "Todo",
+      "url": "/todo"
     }
   ]
 }

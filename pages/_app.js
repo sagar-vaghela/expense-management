@@ -7,6 +7,7 @@ import TagManager from "react-gtm-module";
 import "styles/style.scss";
 import 'devextreme/dist/css/dx.light.css';
 
+
 const App = ({ Component, pageProps }) => {
   // import google font css
   const pf = theme.fonts.font_family.primary;
@@ -56,6 +57,7 @@ const App = ({ Component, pageProps }) => {
       <Context>
       <Component {...pageProps} />
       </Context>
+  
     </>
   );
 };

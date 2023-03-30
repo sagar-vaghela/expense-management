@@ -25,4 +25,13 @@
 @layer expense {
     @import "expense";
   }
-  
+  .auth_page {
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    background-image: url(../public/images/5291450.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

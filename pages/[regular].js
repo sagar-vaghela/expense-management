@@ -4,6 +4,7 @@ import Base from "@layouts/Baseof";
 import Contact from "@layouts/Contact";
 import Default from "@layouts/Default";
 import ExpenseTracker from "@layouts/ExpenseTracker";
+// import Todo from "@layouts/Todo";
 import { getRegularPage, getSinglePage } from "@lib/contentParser";
 
 // for all regular pages
@@ -21,7 +22,7 @@ const RegularPages = ({ data }) => {
       return <Contact data={data} />;
     } else if (layout === "expenseTracker") {
       return <ExpenseTracker data={data} />;
-    } else {
+    }  else {
       return <Default data={data} />;
     }
   };
